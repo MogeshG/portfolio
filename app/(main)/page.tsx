@@ -13,6 +13,9 @@ import NextIcon from "@/public/nextjs.svg";
 import SCSSIcon from "@/public/scss.svg";
 import TypescriptIcon from "@/public/typescript.svg";
 import TailwindIcon from "@/public/tailwindcss.svg";
+import MessageIcon from "@/public/message.svg";
+import LinkedIn from "@/public/linkedin.svg";
+import InstagramIcon from "@/public/instagram.svg";
 import Image from "next/image";
 import projects from "../constants/projects";
 import Card from "../components/Card";
@@ -20,8 +23,9 @@ import Card from "../components/Card";
 const page = () => {
   return (
     <div className="w-full">
+      {/* Landing Container */}
       <div className="h-[95vh] text-white border-b border-b-[#323a47] grid grid-cols-1 md:grid-cols-2 overflow-hidden">
-        <div className="flex flex-col gap-3 justify-center items-center px-16">
+        <div className="order-2 sm:order-1 flex flex-col gap-3 justify-center items-center px-16">
           <div className="flex flex-col">
             <span className="text-gradient text-7xl">FULL STACK</span>
             <span className="text-gradient text-7xl">DEVELOPER</span>
@@ -32,10 +36,11 @@ const page = () => {
           </p>
           <GlowButton scroll="#projects">My Work</GlowButton>
         </div>
-        <div className="relative">
-          <div className="bg-circle absolute w-[30rem] bottom-0 translate-x-1/3 aspect-square"></div>
+        <div className="relative order-1 sm:order-2">
+          <div className="bg-circle absolute w-[25rem] translate-y-1/2 sm:translate-y-0 sm:w-[30rem] right-0 sm:right-1/2 bottom-0 sm:translate-x-1/3 aspect-square"></div>
         </div>
       </div>
+      {/* Skills */}
       <div
         id="skills"
         className="skills h-fit md:px-[13%] px-10 pt-10 pb-20 text-white flex flex-col items-center gap-2 relative border-b border-b-[#323a47]"
@@ -63,6 +68,7 @@ const page = () => {
         </div>
         <div className="bg-circle absolute w-[27rem] top-2 left-[15%] aspect-square"></div>
       </div>
+      {/* Projects */}
       <div
         id="projects"
         className="projects h-fit md:px-[13%] px-10 pt-10 pb-20 text-white flex flex-col items-center gap-2 relative border-b border-b-[#323a47]"
@@ -76,7 +82,41 @@ const page = () => {
           ))}
         </div>
       </div>
-      <div id="projects" className="page"></div>
+      {/* Contact */}
+      <div id="contact" className="contact px-10 h-screen grid grid-cols-1 sm:grid-cols-2">
+        <div className="flex flex-col p-28 gap-6 border-r">
+          <div className="flex flex-col">
+            <span className="text-gradient text-3xl w-fit">DO YOU HAVE A PROJECT TO</span>
+            <span className="text-gradient text-3xl w-fit">DISCUSS?</span>
+          </div>
+          <div className="flex gap-6">
+            <p className="text-white text-3xl">GET IN TOUCH</p>
+            <Image src={MessageIcon} width={30} height={30} alt="Message Icon" />
+          </div>
+          <div className="mt-6 grid grid-cols-2 gap-3">
+            <div className="flex flex-col gap-3">
+              <p className="text-white text-2xl">CONTACT</p>
+              <a href="mailto:gmogesh2003@gmail.com" className="text-xl text-[#4579c9]">
+                gmoges2003@gmail.com
+              </a>
+            </div>
+            <div className="flex flex-col gap-3">
+              <p className="text-white text-2xl">SOCIAL MEDIA</p>
+              <div className="flex gap-3">
+                <a href="https://in.linkedin.com/in/mogesh-g-660058231">
+                  <Image src={LinkedIn} width={27} height={27} alt="Message Icon" />
+                </a>
+                <a href="https://www.instagram.com/m.o.g.e.s.h?igsh=MXdwN3VmMWdhcTJjMg==">
+                  <Image src={InstagramIcon} width={27} height={27} alt="Message Icon" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex-col flex justify-between">
+          <p className="w-fit text-3xl text-white">CONTACT FORM</p>
+        </div>
+      </div>
     </div>
   );
 };
