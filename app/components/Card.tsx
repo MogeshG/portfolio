@@ -12,6 +12,7 @@ const Card = ({ id, name, description, image, url, handleShowModel }: CardProps)
     <div
       onClick={() => handleShowModel(id)}
       className="bg-[#0c182e] shadow-[1px_1px_7px_#939393]
+      cursor-pointer
  min-w-40 max-w-[28rem] aspect-8/9 rounded-xl flex flex-col overflow-hidden border border-[#5a5a5a]"
     >
       <img src={image} alt={name} className="w-full min-h-[16rem] h-[70%] rounded-xl" />

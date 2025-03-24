@@ -209,7 +209,7 @@ const projects: projectType[] = [
   },
   {
     id: 5,
-    name: "Queue Management & Task Assignment App",
+    name: "Queue Management App",
     description: "Developed backend for the android application",
     image: "/queue.png",
     url: "https://play.google.com/store/apps/details?id=com.skyraan.mathlearning",

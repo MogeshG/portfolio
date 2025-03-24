@@ -154,17 +154,20 @@ const Page = () => {
           </p>
           <GlowButton scroll="#projects">My Work</GlowButton>
         </div>
-        <div className="relative order-1 sm:order-2">
-          <div className="w-[18rem] sm:w-[25rem] top-1/4 lg:top-[6rem] md:top-[30%] absolute right-1/4 md:right-1/3 aspect-10/12 h-fit">
-            <img src="/profile.png" />
+        <div className="relative flex items-end justify-center order-1 sm:order-2">
+          <div className="relative w-fit h-fit lg:-translate-y-10">
+            <img
+              src="/profile.png"
+              className="[@media(max-width:380)]:w-[15rem] [@media(max-width:380)]:mb-[2rem] [@media(max-width:380)]:mt-[5rem] w-[18rem] sm:w-[25rem] aspect-9/12 "
+            />
             <div
-              className="h-25 absolute w-full bottom-[-1px]"
+              className="h-25 absolute w-full bottom-[-1px] [@media(max-width:380)]:bottom-[25px]"
               style={{
                 backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0), rgba(17, 23, 35, 1))",
               }}
             ></div>
           </div>
-          <div className="bg-circle absolute w-[25rem] translate-y-1/2 sm:translate-y-0 sm:w-[30rem] right-0 sm:right-[45%] bottom-0 md:bottom-[40%] lg:bottom-0 sm:translate-x-1/3 aspect-square"></div>
+          <div className="bg-circle absolute w-[23rem] translate-y-[8%] sm:translate-y-1  sm:w-[30rem]  sm:translate-x-1 -translate-x-1 aspect-square"></div>
         </div>
       </div>
       {/* Skills */}
