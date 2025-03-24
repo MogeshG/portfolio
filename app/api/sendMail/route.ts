@@ -37,9 +37,7 @@ export async function POST(req: NextRequest) {
   const forwardedFor = req.headers.get("x-forwarded-for") || "";
   const ip = forwardedFor.split(",")[0]?.trim() || "unknown";
 
-  const DURATION = 1000 * 60 * 5;
-
-  if (isRateLimited(ip, DURATION)) {
+  if (isRateLimited(ip)) {
     return NextResponse.json(
       { error: "Too many requests. Please try after 5 minutes." },
       { status: 429 }
