@@ -29,7 +29,11 @@ const Header = () => {
     <div className="h-10">
       {width < 650 ? (
         <div className="relative w-[85vw] flex justify-end z-10 top-10 transform translate-x-1/10">
-          <span className={`rounded-full opacity-0 transition-opacity duration-800 border-2 border-[#323a47] w-fit aspect-square p-1 border-box ${showMenu ? "" : "hide-menu"}`}>
+          <span
+            className={`rounded-full opacity-0 transition-opacity duration-800 border-2 border-[#323a47] w-fit aspect-square p-1 border-box ${
+              showMenu ? "" : "hide-menu"
+            }`}
+          >
             <Image onClick={toggleMenu} src={MenuIcon} width={40} height={40} alt="Menu Icon" />
           </span>
           <div className={`mini-menu ${showMenu ? "animate-width" : ""}`}>
@@ -61,7 +65,7 @@ const Header = () => {
           </div>
         </div>
       ) : (
-        <div className="min-h-[40px] bg-transparent text-[1rem] z-10 items-center text-white rounded-md border sticky translate-y-1/2 transform translate-x-1/10 border-[#323a47] flex justify-between px-4 w-[80vw] h-[10vh]">
+        <div className="min-h-[40px] bg-transparent text-[1rem] z-10 items-center text-white rounded-md border sticky translate-y-1/2 transform translate-x-1/10 border-[#323a47] flex justify-between px-4 w-[80vw] h-[5rem]">
           <div>MOGESH G</div>
           <ul className="flex w-[25%] min-w-[250px] justify-between">
             <li

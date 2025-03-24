@@ -20,6 +20,7 @@ import TailwindIcon from "@/public/tailwindcss.svg";
 import MessageIcon from "@/public/message.svg";
 import LinkedIn from "@/public/linkedin.svg";
 import InstagramIcon from "@/public/instagram.svg";
+import ProfileImage from "@/public/profile.png";
 import Image from "next/image";
 import projects, { projectType } from "../constants/projects";
 import Card from "../components/Card";
@@ -144,8 +145,8 @@ const page = () => {
       <div className="h-[95vh] text-white border-b border-b-[#323a47] grid grid-cols-1 md:grid-cols-2 overflow-hidden">
         <div className="order-2 sm:order-1 flex flex-col gap-3 justify-center items-center px-16">
           <div className="flex flex-col">
-            <span className="text-gradient text-7xl">FULL STACK</span>
-            <span className="text-gradient text-7xl">DEVELOPER</span>
+            <span className="text-gradient text-6xl sm:text-7xl">FULL STACK</span>
+            <span className="text-gradient text-6xl sm:text-7xl">DEVELOPER</span>
           </div>
           <p className="text-2xl text-center mb-4">
             Hey there! I’m a full stack developer who loves working behind the scenes — mostly on
@@ -154,16 +155,25 @@ const page = () => {
           <GlowButton scroll="#projects">My Work</GlowButton>
         </div>
         <div className="relative order-1 sm:order-2">
-          <div className="bg-circle absolute w-[25rem] translate-y-1/2 sm:translate-y-0 sm:w-[30rem] right-0 sm:right-1/2 bottom-0 sm:translate-x-1/3 aspect-square"></div>
+          <div className="w-[18rem] sm:w-[25rem] top-1/4 lg:top-[6rem] md:top-[30%] absolute right-1/4 md:right-1/3 aspect-10/12 h-fit">
+            <img src="/profile.png"/>
+            <div
+              className="h-25 absolute w-full bottom-[-1px]"
+              style={{
+                backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0), rgba(17, 23, 35, 1))",
+              }}
+            ></div>
+          </div>
+          <div className="bg-circle absolute w-[25rem] translate-y-1/2 sm:translate-y-0 sm:w-[30rem] right-0 sm:right-[45%] bottom-0 md:bottom-[40%] lg:bottom-0 sm:translate-x-1/3 aspect-square"></div>
         </div>
       </div>
       {/* Skills */}
       <div
         id="skills"
-        className="skills h-fit md:px-[13%] px-10 pt-10 pb-20 text-white flex flex-col items-center gap-2 relative border-b border-b-[#323a47]"
+        className="skills h-fit md:px-[13%] px-10 pt-10 pb-20 text-white flex flex-col items-center gap-8 relative border-b border-b-[#323a47]"
       >
         <div className="w-full">
-          <p className="text-gradient text-5xl w-fit">SKILLS</p>
+          <p className="text-gradient text-4xl sm:text-5xl w-fit">SKILLS</p>
         </div>
         <div className="md:w-[60%] px-6 flex flex-col items-center gap-4">
           <div className="text-3xl text-center">The Skill, tools and technologies I use:</div>
@@ -188,12 +198,12 @@ const page = () => {
       {/* Projects */}
       <div
         id="projects"
-        className="projects h-fit md:px-[13%] px-10 pt-10 pb-20 text-white flex flex-col items-center gap-2 relative border-b border-b-[#323a47]"
+        className="projects h-fit md:px-[13%] px-10 pt-10 pb-20 text-white flex flex-col items-center gap-8 relative border-b border-b-[#323a47]"
       >
         <div className="w-full">
-          <p className="text-gradient text-5xl w-fit">PROJECTS</p>
+          <p className="text-gradient text-4xl sm:text-5xl w-fit">PROJECTS</p>
         </div>
-        <div className="w-full h-fit grid gap-6 p-10 sm:p-4 grid-cols-[repeat(auto-fill,minmax(200px,1fr))]">
+        <div className="w-full h-fit grid gap-6 p-10 sm:p-4 grid-cols-[repeat(auto-fill,minmax(200px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
           {projects.map((project) => (
             <Card handleShowModel={handleShowModel} {...project} key={project.id} />
           ))}
