@@ -24,7 +24,7 @@ import Image from "next/image";
 import projects, { projectType } from "../constants/projects";
 import Card from "../components/Card";
 
-const page = () => {
+const Page = () => {
   const [errors, setErrors] = useState({
     name: "",
     email: "",
@@ -323,5 +323,5 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
 
