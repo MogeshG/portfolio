@@ -20,7 +20,6 @@ import TailwindIcon from "@/public/tailwindcss.svg";
 import MessageIcon from "@/public/message.svg";
 import LinkedIn from "@/public/linkedin.svg";
 import InstagramIcon from "@/public/instagram.svg";
-import ProfileImage from "@/public/profile.png";
 import Image from "next/image";
 import projects, { projectType } from "../constants/projects";
 import Card from "../components/Card";
@@ -118,6 +117,7 @@ const page = () => {
         // Parse JSON only if there's content
         data = await res.json();
       } catch (err) {
+        console.log(err);
         data = { error: "No response from server" };
       }
       if (res.ok) {
@@ -156,7 +156,7 @@ const page = () => {
         </div>
         <div className="relative order-1 sm:order-2">
           <div className="w-[18rem] sm:w-[25rem] top-1/4 lg:top-[6rem] md:top-[30%] absolute right-1/4 md:right-1/3 aspect-10/12 h-fit">
-            <img src="/profile.png"/>
+            <img src="/profile.png" />
             <div
               className="h-25 absolute w-full bottom-[-1px]"
               style={{
