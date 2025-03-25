@@ -158,7 +158,7 @@ const projects: projectType[] = [
 <p>
 &nbsp;
 <p style="color: skyblue"><strong>
-    <a href="https://github.com/Mogesh21/videoGenerator" target="_blank">Github Link</a></strong></p>
+    <!-- <a href="https://github.com/Mogesh21/videoGenerator" target="_blank">Github Link</a></strong></p> ->
 `,
   },
   {
