@@ -33,6 +33,11 @@ const Page = () => {
   const [sendText, setSendText] = useState("Say Hello");
   const [current, setCurrent] = useState<projectType | null>(null);
   const [showModel, setShowModel] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const customStyles = {
     overlay: {
@@ -59,19 +64,27 @@ const Page = () => {
     setShowModel((prev) => !prev);
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = async (event: FormEvent) => {
     event?.preventDefault();
     setSendText("Sending...");
 
     let error = 0;
-    const form = event.target as HTMLFormElement;
-    const nameInput = form.elements.namedItem("name") as HTMLInputElement;
-    const emailInput = form.elements.namedItem("email") as HTMLInputElement;
-    const messageInput = form.elements.namedItem("message") as HTMLInputElement;
+    // const form = event.target as HTMLFormElement;
+    // const nameInput = form.elements.namedItem("name") as HTMLInputElement;
+    // const emailInput = form.elements.namedItem("email") as HTMLInputElement;
+    // const messageInput = form.elements.namedItem("message") as HTMLInputElement;
 
-    const name = nameInput.value;
-    const email = emailInput.value;
-    const message = messageInput.value;
+    // const name = nameInput.value;
+    // const email = emailInput.value;
+    // const message = messageInput.value;
+
+    const name = formData.name;
+    const email = formData.email;
+    const message = formData.message;
 
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
@@ -135,6 +148,11 @@ const Page = () => {
       console.error("Error sending email:", error);
     } finally {
       setSendText("Say Hello");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     }
   };
 
@@ -142,11 +160,11 @@ const Page = () => {
     <div className="w-full">
       <Toaster position="top-center" richColors />
       {/* Landing Container */}
-      <div className="h-[95vh] text-white border-b border-b-[#323a47] grid grid-cols-1 md:grid-cols-2 overflow-hidden">
-        <div className="order-2 sm:order-1 flex flex-col gap-3 justify-center items-center px-16">
+      <div className="min-h-[95vh] text-white border-b border-b-[#323a47] grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+        <div className="order-2 sm:order-1 flex flex-col gap-3 justify-center items-center px-16 min-h-fit py-4">
           <div className="flex flex-col">
-            <span className="text-gradient text-6xl sm:text-7xl">FULL STACK</span>
-            <span className="text-gradient text-6xl sm:text-7xl">DEVELOPER</span>
+            <span className="text-gradient text-6xl lg:text-7xl">FULL STACK</span>
+            <span className="text-gradient text-6xl lg:text-7xl">DEVELOPER</span>
           </div>
           <p className="text-2xl text-center mb-4">
             Hey there! I’m a full stack developer who loves working behind the scenes — mostly on
@@ -154,14 +172,14 @@ const Page = () => {
           </p>
           <GlowButton scroll="#projects">My Work</GlowButton>
         </div>
-        <div className="relative flex items-end justify-center order-1 sm:order-2">
+        <div className="relative flex items-end md:items-center justify-center order-1 sm:order-2">
           <div className="relative w-fit h-fit lg:-translate-y-10">
             <img
               src="/profile.png"
-              className="[@media(max-width:380)]:w-[15rem] [@media(max-width:380)]:mb-[2rem] [@media(max-width:380)]:mt-[5rem] w-[18rem] sm:w-[25rem] aspect-9/12 "
+              className="[@media(max-width:380)]:w-[13rem] [@media(max-width:380)]:mb-[2rem] [@media(max-width:380)]:mt-[5rem] w-[15rem] sm:w-[20rem] aspect-5/9 "
             />
             <div
-              className="h-25 absolute w-full bottom-[-1px] [@media(max-width:380)]:bottom-[25px]"
+              className="h-30 absolute w-full bottom-[-1px] [@media(max-width:380)]:bottom-[25px]"
               style={{
                 backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0), rgba(17, 23, 35, 1))",
               }}
@@ -259,6 +277,8 @@ const Page = () => {
               <input
                 name="name"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="bg-transparent rounded-xl border border-white outline-none w-full p-3 text-white"
                 placeholder="Name"
               />
@@ -272,6 +292,8 @@ const Page = () => {
                 id="email"
                 name="email"
                 type="text"
+                value={formData.email}
+                onChange={handleChange}
                 className="bg-transparent rounded-xl border border-white outline-none w-full p-3 text-white"
                 placeholder="Email"
               />
@@ -285,6 +307,8 @@ const Page = () => {
                 id="message"
                 type="text"
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="bg-transparent rounded-xl border border-white outline-none w-full p-3 text-white"
                 placeholder="Message"
               />
@@ -308,7 +332,6 @@ const Page = () => {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          {/* <div className="bg-white p-6 rounded shadow-lg w-[60%]"> */}
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-gradient text-xl font-bold h-fit">{current?.name}</h2>
 
