@@ -35,12 +35,23 @@ const Header = () => {
             }`}
           >
             <Image onClick={toggleMenu} src={MenuIcon} width={40} height={40} alt="Menu Icon" />
+            <div className="relative inline-block overflow-hidden group cursor-pointer">
+              <span className="relative z-10">hi</span>
+
+              <span
+                className="
+          absolute bottom-0 left-0 w-full h-[2px] bg-red-400
+          group-hover:h-full transition-all duration-300 ease-in-out
+          z-0
+        "
+              />
+            </div>
           </span>
           <div className={`mini-menu ${showMenu ? "animate-width" : ""}`}>
             <ul className="flex flex-col text-white w-fit gap-3">
               <li
                 onClick={() => scrollToDiv("#skills")}
-                className="cursor-pointer hover:text-[#4579c9] w-fit h-10"
+                className="cursor-pointer hover:text-[#4579c9] w-fit h-10 bg-red-200"
               >
                 TECHNOLOGIES
               </li>
@@ -65,7 +76,7 @@ const Header = () => {
           </div>
         </div>
       ) : (
-        <div className="min-h-[40px] bg-transparent text-[1rem] z-10 items-center text-white rounded-md border sticky translate-y-1/2 transform translate-x-1/10 border-[#323a47] flex justify-between px-4 w-[80vw] h-[5rem]">
+        <div className="min-h-[40px] bg-transparent text-[1rem] z-10 items-center text-white rounded-full shadow-md border sticky translate-y-1/2 transform translate-x-1/10 border-[#323a47] flex justify-between px-4 w-[80vw] h-[5rem]">
           <div>MOGESH G</div>
           <ul className="flex w-[25%] min-w-[250px] justify-between">
             <li

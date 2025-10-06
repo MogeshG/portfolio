@@ -23,6 +23,7 @@ import InstagramIcon from "@/public/instagram.svg";
 import Image from "next/image";
 import projects, { projectType } from "../constants/projects";
 import Card from "../components/Card";
+import TextType from "../components/TextType";
 
 const Page = () => {
   const [errors, setErrors] = useState({
@@ -162,9 +163,22 @@ const Page = () => {
       {/* Landing Container */}
       <div className="min-h-[95vh] text-white border-b border-b-[#323a47] grid grid-cols-1 md:grid-cols-2 overflow-hidden">
         <div className="order-2 sm:order-1 flex flex-col gap-3 justify-center items-center px-16 min-h-fit py-4">
-          <div className="flex flex-col">
-            <span className="text-gradient text-6xl lg:text-7xl">FULL STACK</span>
-            <span className="text-gradient text-6xl lg:text-7xl">DEVELOPER</span>
+          <div className="flex flex-col w-2/3 h-fit">
+            <TextType
+              text={[
+                "FULL STACK DEVELOPER",
+                "JAVASCRIPT WIZARD",
+                "BUILDING BEAUTIFUL WEBSITES",
+                "CODE. COFFEE. REPEAT.",
+                "TURNING IDEAS INTO REALITY",
+              ]}
+              initialDelay={500}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+              className="text-gradient text-5xl lg:text-6xl font-bold h-[6rem]"
+            />
           </div>
           <p className="text-2xl text-center mb-4">
             Hey there! I’m a full stack developer who loves working behind the scenes — mostly on
@@ -174,7 +188,10 @@ const Page = () => {
         </div>
         <div className="relative flex items-end md:items-center justify-center order-1 sm:order-2">
           <div className="relative w-fit h-fit lg:-translate-y-10">
-            <img
+            <Image
+              alt=""
+              width={1000}
+              height={1000}
               src="/profile.png"
               className="[@media(max-width:380)]:w-[13rem] [@media(max-width:380)]:mb-[2rem] [@media(max-width:380)]:mt-[5rem] w-[15rem] sm:w-[20rem] aspect-5/9 "
             />
@@ -350,4 +367,3 @@ const Page = () => {
 };
 
 export default Page;
-

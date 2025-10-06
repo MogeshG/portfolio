@@ -9,6 +9,53 @@ export interface projectType {
 
 const projects: projectType[] = [
   {
+    id: 0,
+    name: "SmashScore",
+    description: "Local badminton match tracking app with React Native and SQLite",
+    image: "/smashscore.png",
+    url: "https://play.google.com/store/apps/details?id=com.mogesh.smashscore",
+    longDescription: `<p class="" data-start="100" data-end="300">I built a <strong data-start="110" data-end="160">full-stack badminton match tracking app</strong> featuring a <strong data-start="170" data-end="210">React Native / Expo mobile app</strong> and a <strong data-start="220" data-end="250">SQLite local database</strong>. Players can manage matches, track scores in real-time, and view detailed statistics. The app also integrates <strong data-start="260" data-end="280">Google Ads</strong> and <strong data-start="290" data-end="310">Firebase</strong> for analytics and monetization.</p>
+
+<p style="font-size: 1.3rem" data-start="311" data-end="320"><strong>Key Highlights:</strong></p>
+<ul data-start="321" data-end="600">
+<li class="" data-start="322" data-end="370">
+<p class="" data-start="324" data-end="370">🏸 <strong data-start="327" data-end="350">Match Management</strong> – Organize singles, doubles, and tournament matches with real-time score updates.</p>
+</li>
+<li class="" data-start="371" data-end="420">
+<p class="" data-start="373" data-end="420">📊 <strong data-start="376" data-end="400">Score Tracking</strong> – Track points, sets, and match progress efficiently using SQLite locally.</p>
+</li>
+<li class="" data-start="421" data-end="470">
+<p class="" data-start="423" data-end="470">📱 <strong data-start="426" data-end="450">Mobile App</strong> – Built with React Native / Expo for Android devices.</p>
+</li>
+<li class="" data-start="471" data-end="550">
+<p class="" data-start="473" data-end="500">📈 <strong data-start="476" data-end="500">Analytics & Ads</strong> – Integrated Google Ads and Firebase for analytics, monetization, and user engagement tracking.</p>
+</li>
+<li class="" data-start="551" data-end="600">
+<p class="" data-start="553" data-end="600">🔒 <strong data-start="556" data-end="580">Secure & Local</strong> – Local SQLite database ensures offline access with fast performance.</p>
+</li>
+</ul>
+
+<p style="font-size: 1.3rem" data-start="601" data-end="620"><strong>Tech Stack:</strong></p>
+<ul data-start="621" data-end="750">
+<li class="" data-start="622" data-end="650">
+<p class="" data-start="624" data-end="650"><strong data-start="624" data-end="635">Mobile App</strong>: React Native / Expo</p>
+</li>
+<li class="" data-start="651" data-end="690">
+<p class="" data-start="653" data-end="690"><strong data-start="653" data-end="670">Local Database</strong>: SQLite</p>
+</li>
+<li class="" data-start="691" data-end="730">
+<p class="" data-start="693" data-end="730"><strong data-start="693" data-end="705">Analytics & Ads</strong>: Firebase, Google Ads</p>
+</li>
+<li class="" data-start="731" data-end="750">
+<p class="" data-start="733" data-end="750"><strong data-start="733" data-end="743">Auth</strong>: Local authentication & role-based access for admin dashboard</p>
+</li>
+</ul>
+
+&nbsp;
+<p style="color: skyblue"><strong>
+<a href="https://play.google.com/store/apps/details?id=com.mogesh.smashscore" target="_blank">Playstore Link</a></strong></p>`,
+  },
+  {
     id: 1,
     name: "Sticker App",
     description: "Developed backend for the android application",
@@ -57,7 +104,10 @@ const projects: projectType[] = [
 <li class="" data-start="1373" data-end="1434">
 <p class="" data-start="1375" data-end="1434"><strong data-start="1375" data-end="1383">Auth</strong>: Secure authentication &amp; role-based access control</p>
 </li>
-</ul>`,
+</ul>
+&nbsp;
+<p style="color: skyblue"><strong>
+    <a href="https://play.google.com/store/apps/details?id=com.skyraan.stickers" target="_blank">Playstore Link</a></strong></p>`,
   },
   {
     id: 2,
@@ -108,6 +158,9 @@ const projects: projectType[] = [
 <li class="" data-start="1522" data-end="1596">
 <p class="" data-start="1524" data-end="1596"><strong data-start="1524" data-end="1543">Auth &amp; Security</strong>: JWT-based Authentication, Role-Based Access Control</p>
 </li>
+&nbsp;
+<p style="color: skyblue"><strong>
+     <a href="https://play.google.com/store/apps/details?id=com.skyraan.mathlearning" target="_blank">Playstore Link</a></strong></p>
 </ul>`,
   },
   {
@@ -212,7 +265,7 @@ const projects: projectType[] = [
     name: "Queue Management App",
     description: "Developed backend for the android application",
     image: "/queue.png",
-    url: "https://play.google.com/store/apps/details?id=com.skyraan.mathlearning",
+    url: "",
     longDescription: `<p class="" data-start="225" data-end="512">A <strong data-start="227" data-end="275">fully functional cross-platform Electron app</strong> designed to streamline in-office meeting queues and task assignments. Built to eliminate idle waiting by allowing team members to <strong data-start="406" data-end="431">send meeting requests</strong> to the manager, receive <strong data-start="456" data-end="481">real-time invitations</strong>, and manage tasks efficiently.</p>
 &nbsp;
     <p style="font-size: 1.3rem" class="" data-start="519" data-end="540">Key Features:</p>
